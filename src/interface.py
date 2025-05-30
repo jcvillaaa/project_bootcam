@@ -9,7 +9,7 @@ st.set_page_config(page_title="Cyber Agent", layout="wide", initial_sidebar_stat
 st.markdown("""
     <style>
            .block-container {
-                padding-top: 2rem; /* Ajusta este valor según necesites */
+                padding-top: 2rem;
                 padding-bottom: 0rem;
                 padding-left: 5rem;
                 padding-right: 5rem;
@@ -39,7 +39,7 @@ for message in st.session_state.messages:
         st.markdown(message["content"])
 
 # --- Interfaz de entrada de chat ---
-if prompt := st.chat_input("Ingresa tu solicitud al Cyber Agent..."):
+if prompt := st.chat_input("Ingresa tu solicitud al Cyber Agent. Ejemplo: 'Inspecciona el primer mensaje de mi bandeja de entrada de Gmail en busca de Phishing.'"):
     st.session_state.messages.append({"role":"user", "content": prompt})
     with st.chat_message("user"):
         st.markdown(prompt)
